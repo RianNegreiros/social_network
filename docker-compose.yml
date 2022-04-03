@@ -7,7 +7,7 @@ services:
     environment:
       - POSTGRES_USER=${USERNAME_DB}
       - POSTGRES_PASSWORD=${PASSWORD_DB}
-      - POSTGRES_DB=${DATABASE}
+      - POSTGRES_DB=${DATABASE_TEST}
     ports:
       - '54321:5432'
     volumes:
