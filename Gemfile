@@ -59,4 +59,4 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 
-gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+gem 'rspec-rails', '~> 5.1', '>= 5.1.1'
