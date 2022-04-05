@@ -20,10 +20,14 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV['HOST_DB'] %>
-  database: <%= ENV['DATABASE'] %>
-  username: <%= ENV['USERNAME_DB'] %>
-  password: <%= ENV['PASSWORD_DB'] %>
+  host: db
+  database: social-network
+  username: social-network
+  password: social-network
+  #host: <%= ENV['HOST_DB'] %>
+  #database: <%= ENV['DATABASE'] %>
+  #username: <%= ENV['USERNAME_DB'] %>
+  #password: <%= ENV['PASSWORD_DB'] %>
 
 
 development:
