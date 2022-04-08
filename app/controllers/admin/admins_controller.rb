@@ -19,8 +19,21 @@ class Admin::AdminsController < AdminController
 
   def edit
     @admin = Admin.find(params[:id])
-    
   end
+
+  def update
+    @admin = Admin.find(params[:id])
+    params = form_params.to_h
+    params = params.except!(:password, :password_confirmation) if params[:password].blank?
+
+    if @admin.update(params)
+      redirect_to admin_admins_path
+    else
+      render :edit
+    end
+  end
+
+
 
   private
 
