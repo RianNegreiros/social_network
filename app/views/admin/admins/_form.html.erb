@@ -1,6 +1,7 @@
 <div class="card" style="background-color:#f6f6f6;">
   <div class="card-body">
   <% form_with(model: [:admin, admin], local: true) do |f| %>
+  <%= render 'form_errors', record: admin %>
     <form>
       <div class="form-group">
         <label>Name</label>

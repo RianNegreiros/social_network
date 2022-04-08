@@ -7,6 +7,16 @@ class Admin::AdminsController < AdminController
     @admin = Admin.new
   end
 
+  def create
+    @admin = Admin.new(form_params)
+
+    if @admin.save
+      redirect_to admin_admins_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def form_params
