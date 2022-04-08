@@ -17,6 +17,11 @@ class Admin::AdminsController < AdminController
     end
   end
 
+  def edit
+    @admin = Admin.find(params[:id])
+    
+  end
+
   private
 
   def form_params
