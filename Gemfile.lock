@@ -101,6 +101,11 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -125,7 +130,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitest (5.15.0)
-    msgpack (1.4.5)
+    msgpack (1.5.1)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -182,7 +187,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    regexp_parser (2.2.1)
+    regexp_parser (2.3.0)
     reline (0.3.1)
       io-console (~> 0.5)
     responders (3.0.1)
@@ -256,6 +261,7 @@ DEPENDENCIES
   debug
   devise (~> 4.8, >= 4.8.1)
   dotenv-rails (~> 2.7, >= 2.7.6)
+  factory_bot_rails
   importmap-rails
   jbuilder
   pg (~> 1.1)
