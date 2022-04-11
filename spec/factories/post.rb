@@ -7,4 +7,5 @@ FactoryBot.define do
       Duis ut diam quam nulla porttitor massa id neque. 
       Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper.' 
     }
+  end
 end
