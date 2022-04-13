@@ -5,6 +5,6 @@ class User::SubscriptionController < UserController
 
     Subscription.create(followed_by: current_user, followed: user_to_follow)
 
-    redirect_to user_potencial_to_follow
+    redirect_to user_potencial_to_follow_path
   end
 end
