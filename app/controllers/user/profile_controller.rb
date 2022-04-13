@@ -4,7 +4,11 @@ class User::ProfileController < UserController
     @post = Post.new
   end
 
-  def potenical_to_follow
-    @potenical_to_follow = User.potenical_to_follow(current_user)
+  def potential_to_follow
+    @potential_to_follow = User.potential_to_follow(current_user)
+  end
+
+  def following
+    @following = current_user.following
   end
 end
