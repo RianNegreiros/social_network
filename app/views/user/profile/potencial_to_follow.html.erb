@@ -1,0 +1,12 @@
+<div class="row">
+  <% @potenical_to_follow.each do |user| %>
+    <div class="col-lg-4">
+      <div class="card">
+        <h5 class="card-header"> <%= image_tag(user.avatar, class: 'ul-w-100-forced rounded-circle mr-3', style: 'width: 90px; height: 90px') %> <%= user.name %></h5>
+        <div class="card-body">
+          Email:<p class="card-text text-muted"><%= user.email %> </p>
+          Phone Number:<p class="card-text text-muted"><%= user.phone_number %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
