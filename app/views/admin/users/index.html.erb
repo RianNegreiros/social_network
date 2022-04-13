@@ -8,6 +8,8 @@
       <th scope="col">Name</th>
       <th scope="col">Phone Number</th>
       <th scope="col">Email</th>
+      <th scope="col">Following</th>
+      <th scope="col">Followers</th>
       <th scope="col">Created At</th>
     </tr>
   </thead>
@@ -19,6 +21,8 @@
       <td><%= user.name %></td>
       <td><%= user.phone_number %></td>
       <td><%= user.email %></td>
+      <td><%= user.following.count %></td>
+      <td><%= user.followers.count %></td>
       <td><%= user.created_at.strftime["%d/%m/%Y, %H:%M"] %></td>
     </tr>
     <% end %>
