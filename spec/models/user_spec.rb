@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it 'user is valid' do
-    @user = User.new(
+    user = User.new(
       name: 'test_name', 
       email: 'test@mail.com', 
-      phone: '9090909090',
-      avatar: fixture_file_upload(Rails.join('spec', 'support', 'test-img.png'), 'image/png'),
+      phone_number: '9090909090',
+      avatar: fixture_file_upload(Rails.root.join('spec', 'support', 'test_img.png'), 'image/png'),
       password: 'testpassword'
     )
 
@@ -14,10 +14,10 @@ RSpec.describe User, type: :model do
   end
 
   it 'user is not valid' do
-    @user = User.new(
+    user = User.new(
       name: 'test_name', 
       email: 'test@mail.com', 
-      phone: '9090909090',
+      phone_number: '9090909090',
       password: 'testpassword'
     )
 

@@ -1,0 +1,6 @@
+<h5 class="card-header"> 
+  <%= image_tag(user.avatar, class: 'ul-w-100-forced rounded-circle mr-3', style: 'width: 90px; height: 90px') %> <%= user.name %>
+  <br>
+  <span style="font-size:14px;">Followers:</span> <span style="font-size:16px;" class="badge badge-info mr-3"><%= user.followers.count %></span>
+  <span style="font-size:14px;">Following:</span> <span style="font-size:16px;" class="badge badge-info"><%= user.following.count %></span>
+</h5>

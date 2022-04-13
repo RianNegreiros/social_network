@@ -5,17 +5,17 @@
       <li class="nav-item <%= current_page?(root_path)? "active" : "" %>">
         <a class="nav-link" href="<%= root_path %>">Timeline</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Followers</a>
+      <li class="nav-item <%= current_page?(user_followers_path)? "active" : "" %>">
+        <a class="nav-link" href="<% user_followers_path %>">Followers</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Following</a>
+      <li class="nav-item  <%= current_page?(user_following_path)? "active" : "" %>">
+        <a class="nav-link" href="<% user_following_path %>">Following</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Who can I follow</a>
+      <li class="nav-item <%= current_page?(user_potential_to_follow_path)? "active" : "" %>">
+        <a class="nav-link" href="<%= user_potential_to_follow_path %>">Who can I follow</a>
       </li>
       <li class="nav-item <%= current_page?(user_profile_path)? "active" : "" %>">
-        <a class="nav-link" href="">My profile</a>
+        <a class="nav-link" href="<%= user_profile_path %>">My profile</a>
       </li>
     </ul>
     <div class="nav-item d-flex">

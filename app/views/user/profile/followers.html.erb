@@ -1,0 +1,12 @@
+<div class="row">
+  <% @followers.each do |user| %>
+    <div class="col-lg-4">
+      <div class="card">
+        <%= render('user_card_header', user: user) %>
+        <div class="card-body">
+          Email:<p class="card-text text-muted"><%= user.email %> </p>
+          Phone Number:<p class="card-text text-muted"><%= user.phone_number %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
