@@ -16,4 +16,8 @@ class User::SubscriptionController < UserController
 
     redirect_to user_following_path
   end
+
+  def followers
+    @followers = current_user.followers
+  end
 end
