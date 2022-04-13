@@ -4,14 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :phone, :name, :avatar, presence: true
+  validates :phone_number, :name, :avatar, presence: true
 
   has_one_attached :avatar
   has_many :post
 
   has_many :followers_subscriptions, foreign_key: :followed_id, class_name: 'Subscription'
   has_many :followers, through: :followers_subscriptions, source: :followed_by
-
-  has_many :followers_subscriptions, foreign_key: :followed_by_id, class_name: 'Subscription'
+  
+  has_many :following_subscriptions, foreign_key: :followed_by_id, class_name: 'Subscription'
   has_many :following, through: :following_subscriptions, source: :followed
 end
