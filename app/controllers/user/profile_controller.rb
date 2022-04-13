@@ -5,6 +5,6 @@ class User::ProfileController < UserController
   end
 
   def potenical_to_follow
-    @potenical_to_follow = User.where.not(id: current_user.following.pluck(:id)).where.not(id: current_user.id)
+    @potenical_to_follow = User.potenical_to_follow(current_user)
   end
 end
