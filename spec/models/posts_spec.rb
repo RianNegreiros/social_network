@@ -14,7 +14,7 @@ RSpec.describe Post, type: :model do
     expect(post.user).to eql user
   end
 
-  it 'user has mnay posts' do
+  it 'user has many posts' do
     user = FactoryBot.create(:user)
     post = FactoryBot.create(:post, user: user)
     expect(user.posts).to include post
