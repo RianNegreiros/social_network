@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <% current_user.post.order(created_at: :desc).each do |post| %>
+    <% current_user.posts.order(created_at: :desc).each do |post| %>
       <%= render 'user/post_card', post: post %>
     <% end %>
   </div>

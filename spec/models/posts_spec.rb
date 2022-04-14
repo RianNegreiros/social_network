@@ -17,6 +17,6 @@ RSpec.describe Post, type: :model do
   it 'user has mnay posts' do
     user = FactoryBot.create(:user)
     post = FactoryBot.create(:post, user: user)
-    expect(user.post).to include post
+    expect(user.posts).to include post
   end
 end

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :phone_number, :name, :avatar, presence: true
 
   has_one_attached :avatar
-  has_many :post
+  has_many :posts
   has_many :comments
 
   has_many :followers_subscriptions, foreign_key: :followed_id, class_name: 'Subscription'
