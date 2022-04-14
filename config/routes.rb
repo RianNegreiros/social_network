@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:create, :destroy] do
       member do
         post :like_toggle
+      end
+    end
     resources :users, only: :show
 
     post 'follow/:id', to: 'subscription#follow', as: :follow
