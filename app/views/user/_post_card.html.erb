@@ -18,6 +18,7 @@
     </div>
 
   <%= form_with(model: [:user, @comment]) do |f| %>
+  <%= hidden_field(:post_id, value: post.id) %>
     <div class="form-group">
       <%= f.text_area :body, rows: 2, class: 'form-control', placeholder: 'Write your comment', required: true %>
     </div>
@@ -26,6 +27,8 @@
     </div>
   <% end %>
 
-  <%= post.comments.order(created_at: :desc).each do |comment| %>
-    <%= render("comment_card", comment: comment) %>
-  <% end %>
+  <div id='post<%= post.id %>-comments'>
+    <%= post.comments.order(created_at: :desc).each do |comment| %>
+      <%= render("comment_card", comment: comment) %>
+    <% end %>
+  </div>
