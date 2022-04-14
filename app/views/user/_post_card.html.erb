@@ -16,3 +16,12 @@
         <span class="ml-2"><%= post.likes.count %></span>
       </div>
     </div>
+
+  <%= form_with(model: [:user, @comment]) do |f| %>
+    <div class="form-group">
+      <%= f.text_area :body, rows: 2, class: 'form-control', placeholder: 'Write your comment', required: true %>
+    </div>
+    <div class="d-flex">
+      <button type="submit" class="btn btn-sm btn-primary ml-auto">Send</button>
+    </div>
+  <% end %>
