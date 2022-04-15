@@ -1,5 +1,6 @@
     <div class="card text-white bg-dark mb-3 mt-3">
       <div class="card-header">
+        <%= image_tag(post.user.avatar, class: 'ul-w-100-forced rounded-circle mr-3', style: 'width: 90px; height: 30px') %>
         <%= link_to post.user.name, post.user = current_user ? user_profile_path : user_user_path(post.user) %>
         <%= if post.user == current_user %>
           <%= link_to user_post_path(post) method: :delete, data: (confirm: 'Are you sure ?'), class: 'close text-white' do %>
