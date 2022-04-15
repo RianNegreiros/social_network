@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     root to: 'home#index'
     resources :admins
     resources :user, only: :index
-    resources :post, only: [:index, :show]
+    resources :posts, only: [:index, :show]
   end
 
   root to: 'user/timeline#index'
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       end
     end
     resources :users, only: :show
+    resources :comments, only: [:create, :destroy]
 
     post 'follow/:id', to: 'subscription#follow', as: :follow
     post 'unfollow/:id', to: 'subscription#unfollow', as: :unfollow
