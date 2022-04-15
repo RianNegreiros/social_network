@@ -16,7 +16,7 @@
         <% end %>
         <span class="ml-2"><%= post.likes.count %></span>
 
-        <%= link_to nil, { remote: true } do %>
+        <%= link_to nil, { class: "comments-toggle ml-4", remote: true } do %>
           <i style="font-size:18px;#ffffff" class="fa fa-comment"></i>
         <% end %>
         <span class="ml-2" id="post<%= post.id %>-comments-count"><%= post.comments.count %></span>
@@ -24,20 +24,22 @@
       </div>
     </div>
 
-  <%= form_with(model: [:user, @comment]) do |f| %>
-  <%= hidden_field(:post_id, value: post.id) %>
-    <div class="form-group">
-      <%= f.text_area :body, rows: 2, class: 'form-control', placeholder: 'Write your comment', required: true %>
-    </div>
-    <div class="d-flex">
-      <button type="submit" class="btn btn-sm btn-primary ml-auto">Send</button>
-    </div>
-  <% end %>
-
-  <div id='post<%= post.id %>-comments'>
-    <%= post.comments.order(created_at: :desc).each do |comment| %>
-      <%= render("comment_card", comment: comment) %>
+  <div id="comments-list", style="display:none;">
+    <%= form_with(model: [:user, @comment]) do |f| %>
+    <%= hidden_field(:post_id, value: post.id) %>
+      <div class="form-group">
+        <%= f.text_area :body, rows: 2, class: 'form-control', placeholder: 'Write your comment', required: true %>
+      </div>
+      <div class="d-flex">
+        <button type="submit" class="btn btn-sm btn-primary ml-auto">Send</button>
+      </div>
     <% end %>
+
+    <div id='post<%= post.id %>-comments'>
+      <%= post.comments.order(created_at: :desc).each do |comment| %>
+        <%= render("comment_card", comment: comment) %>
+      <% end %>
+    </div>
   </div>
 
   <hr class="bg-secondary">
