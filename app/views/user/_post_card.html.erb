@@ -2,7 +2,7 @@
       <div class="card-header">
         <%= link_to post.user.name, post.user = current_user ? user_profile_path : user_user_path(post.user) %>
         <%= if post.user == current_user %>
-          <%= link_to user_post_path(post) method: :delete, class: 'close text-white' do %>
+          <%= link_to user_post_path(post) method: :delete, data: (confirm: 'Are you sure ?'), class: 'close text-white' do %>
             <span aria-hidden="true">&times;</span>
           <% end %>
         <% end %>
